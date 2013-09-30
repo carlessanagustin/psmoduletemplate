@@ -1,0 +1,4 @@
+psmoduletemplate
+================
+
+prestashop module template
