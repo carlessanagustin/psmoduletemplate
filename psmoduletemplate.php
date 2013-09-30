@@ -1,6 +1,4 @@
 <?php
-/* left at: Using Smarty */
-/* URL: http://doc.prestashop.com/display/PS15/Creating+a+PrestaShop+module#CreatingaPrestaShopmodule-CreatingaPrestaShopmodule */
 
 /*
 *  @author Carles San Agustin <hello@carlessanagustin.com>
