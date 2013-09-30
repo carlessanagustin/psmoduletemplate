@@ -1,0 +1,19 @@
+/* psmoduletemplate information */
+
+div#psmoduletemplate_block_left p { 
+  font-size: 150%;
+  font-style:italic;
+}
+div#psmoduletemplate_block_right p { 
+  font-size: 150%;
+  font-style:italic;
+}
+
+div#psmoduletemplate_block_left p a.myLink {
+font-weight: bold;
+color: #0088cc;
+}
+div#psmoduletemplate_block_right p a.myLink {
+font-weight: bold;
+color: #0088cc;
+}

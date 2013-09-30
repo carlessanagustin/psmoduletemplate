@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <hooks>
+        <hook>header</hook>
+        <hook>leftColumn</hook>
+        <hook>RightColumn</hook>
+        <hook>displayHome</hook>
+		<hook>displayAdminProductsExtra</hook>
+    </hooks>
+	<confs>
+        <conf>
+            <name>NAME</name>
+            <value>Carles</value>
+        </conf>
+        <conf>
+            <name>SURNAME</name>
+            <value>San Agustin</value>
+        </conf>
+    </confs>
+</configuration>
