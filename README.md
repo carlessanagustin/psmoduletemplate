@@ -8,7 +8,7 @@ You can:
 - Copy it.
 - Use it.
 - Fork it.
-- Contact me with questions, doubts or improvements.
+- Contact me with questions, doubts, improvements or a cold beer anytime.
 - Help me developing a fully functional module template.
 
 User under your responsability. I don't asume any error or misuse or security gap.
