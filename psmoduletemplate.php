@@ -11,7 +11,7 @@
 if (!defined('_PS_VERSION_'))
 	exit;
 
-class PS Module Template extends Module
+class psModuleTemplate extends Module
 {
 	const SCHEMA_CREATE_SQL = 'data/schema_create';
 	const SCHEMA_DROP_SQL = 'data/schema_drop';
