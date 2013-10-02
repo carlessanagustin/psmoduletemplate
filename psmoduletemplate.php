@@ -1,5 +1,4 @@
 <?php
-
 /*
 *  @author Carles San Agustin <hello@carlessanagustin.com>
 *  @copyright  2013 carlessanagustin.com
@@ -35,8 +34,6 @@ class psModuleTemplate extends Module
 	$this->ps_versions_compliancy['min'] = '1.5.0.1';
 	$this->need_instance = 0;
 	
-	/* $this->dependencies = array('blockcart'); */
-	
 	parent::__construct();
 	
 	$this->displayName = $this->l('PS Module Template block module');
@@ -47,7 +44,6 @@ class psModuleTemplate extends Module
  
     if (!Configuration::get('MYMODULE_NAME'))       
       $this->warning = $this->l(' NO NAME ??!! ');
-	
 	}
 
     /*
@@ -62,31 +58,6 @@ class psModuleTemplate extends Module
 		 
 
 	return ( parent::install() && $this->_installDependences() );
-
-/*
-	return parent::install() &&
-	  $this->_installHooks() &&
-	  $this->_installSql($query) &&
-	  Configuration::updateValue('MYMODULE_NAME', 'my friend');
-*/
-
-
-/*  // OK!
-$query =        'CREATE TABLE IF NOT EXISTS `'._DB_PREFIX_.'psmoduletemplate` (
-                        `id_product_video` int(10) unsigned NOT NULL,
-                        `id_product_sub` int(10) unsigned NOT NULL,
-                        UNIQUE KEY (`id_product_video`,`id_product_sub`),
-                        KEY (`id_product_video`)
-                        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;';
-	return parent::install() &&
-	  $this->registerHook('header') &&
-	  $this->registerHook('leftColumn') &&
-	  $this->registerHook('rightColumn') &&
-	  Db::getInstance()->Execute($query) &&
-	  Configuration::updateValue('MYMODULE_NAME', 'my friend');
-*/
-
-
 	}
 	protected function _installDependences()
     {
@@ -254,62 +225,49 @@ $query =        'CREATE TABLE IF NOT EXISTS `'._DB_PREFIX_.'psmoduletemplate` (
 			return false;
 		return true;
 	}
-    //public function hookDisplayAdminProductsExtra($_ /* params */)
-    public function hookDisplayAdminProductsExtra()
-    {
-    	
-    	/*
-        $idProduct = (int)Tools::getValue('id_product');
-        $idLang = (int)$this->context->language->id;
 
-        // Product duration
-        $defaultDuration = intval(Configuration::get('PSVOD_PRODUCT_DURATION'));
-        $productDuration = ProductDuration::getByProduct($idProduct);
-        $duration = ($productDuration !== null && $productDuration->id) ? intval($productDuration->duration) : $defaultDuration;
-
-        // CSS/JS
-        $js =  array(
-            Media::getJSPath($this->checkMedia('admin', 'js', 'productsExtra.js')),
-            Media::getJSPath($this->checkMedia('admin', 'js', 'dnd.js'))
-        );
-        $css = array_keys(Media::getCSSPath($this->checkMedia('admin', 'css', 'productsExtra.css')));
-        $this->context->controller->addJqueryPlugin('tablednd');
-
-        $this->smarty->assign(array(
-            'videosToken' => Tools::getAdminTokenLite('AdminProductVideos'),
-            'subsToken' => Tools::getAdminTokenLite('AdminProductSubs'),
-            'imgPath' => _MODULE_DIR_.'prestavod/medias/img/',
-            'css_file' => $css[0],
-            'js_files' => $js,
-            'product' => new Product($idProduct),
-            'duration' => $duration,
-            'defaultDuration' => $defaultDuration,
-            'videos' => ProductVideo::getByProduct($idProduct, $idLang, false),
-            'subs' => ProductSub::getByProduct($idProduct, false)
-        ));
-        return $this->display($this->file, $this->checkTemplate('admin', 'productsExtra.tpl'));
-		*/ 
-    }
-	/*
-	public function hookTop($params)
+	// back-office: Add a new feature
+	public function hookDisplayFeatureForm()
 	{
-		if (!$this->active)
-			return;
-
-		$this->smarty->assign(array(
-			'cart' => $this->context->cart,
-			'cart_qties' => $this->context->cart->nbProducts(),
-			'logged' => $this->context->customer->isLogged(),
-			'customerName' => ($this->context->customer->logged ? $this->context->customer->firstname.' '.$this->context->customer->lastname : false),
-			'firstName' => ($this->context->customer->logged ? $this->context->customer->firstname : false),
-			'lastName' => ($this->context->customer->logged ? $this->context->customer->lastname : false),
-			'order_process' => Configuration::get('PS_ORDER_PROCESS_TYPE') ? 'order-opc' : 'order'
-		));
-		return $this->display(__FILE__, 'psmoduletemplate.tpl');
+	    $this->context->smarty->assign(
+	        array(
+	            'my_module_message' => $this->l('You are in hookDisplayFeatureForm')
+	        )
+	    );
+	    return $this->display(__FILE__, 'psmoduletemplate-default-hook.tpl');
 	}
-	*/
+	// back-office: Add a new feature value
+	public function hookDisplayFeatureValueForm()
+	{
+	    $this->context->smarty->assign(
+	        array(
+	            'my_module_message' => $this->l('You are in hookDisplayFeatureValueForm')
+	        )
+	    );
+	    return $this->display(__FILE__, 'psmoduletemplate-default-hook.tpl');
+	}
 
+	// back-office: Catalog  > Attributes and Values  > Add New Values
+	public function hookDisplayAttributeForm()
+	{
+	    $this->context->smarty->assign(
+	        array(
+	            'my_module_message' => $this->l('You are in hookDisplayAttributeForm')
+	        )
+	    );
+	    return $this->display(__FILE__, 'psmoduletemplate-default-hook.tpl');
+	}	
 	
+	// back-office: Catalog  > Attributes and Values  > Add New Attributes
+	public function hookDisplayAttributeGroupForm()
+	{
+	    $this->context->smarty->assign(
+	        array(
+	            'my_module_message' => $this->l('You are in hookDisplayAttributeGroupForm')
+	        )
+	    );
+	    return $this->display(__FILE__, 'psmoduletemplate-default-hook.tpl');
+	}	
 	
 	
 	

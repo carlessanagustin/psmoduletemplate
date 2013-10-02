@@ -5,7 +5,10 @@
         <hook>leftColumn</hook>
         <hook>RightColumn</hook>
         <hook>displayHome</hook>
-		<hook>displayAdminProductsExtra</hook>
+		<hook>displayFeatureForm</hook>
+		<hook>displayFeatureValueForm</hook>
+		<hook>displayAttributeForm</hook>
+		<hook>displayAttributeGroupForm</hook>
     </hooks>
 	<confs>
         <conf>
