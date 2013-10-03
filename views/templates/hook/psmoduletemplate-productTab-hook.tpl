@@ -1,10 +1,4 @@
-{if !$product->id}
-    <div class="warn" style="display:block">
-        {l s='You need to save this product first before adding dates.' mod='psmoduletemplate'}
-    </div>
-{else}
-        <h4>{l s='Add properties to product' mod='psmoduletemplate'}</h4>
-        <div>
-			<p>Properties here</p>
-        </div>
-{/if}
+<h4 class="tab">psmoduletemplate</h4>
+<p>note: this is hook/psmoduletemplate-productTab-hook.tpl</p>
+<p>{$my_module_message}</p>
+

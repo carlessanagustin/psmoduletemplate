@@ -268,10 +268,27 @@ class psModuleTemplate extends Module
 	    );
 	    return $this->display(__FILE__, 'psmoduletemplate-default-hook.tpl');
 	}	
-	
+
+	public function hookDisplayAdminProductsExtra()
+	{
+	    $this->context->smarty->assign(
+	        array(
+	            'my_module_message' => $this->l('You are in hookDisplayAdminProductsExtra')
+	        )
+	    );
+	    return $this->display(__FILE__, 'psmoduletemplate-productTab-hook.tpl');
+	}
+
+
+
+
+
+
+
 	
 	
 
+	
 	
 	
 	

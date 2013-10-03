@@ -9,6 +9,7 @@
 		<hook>displayFeatureValueForm</hook>
 		<hook>displayAttributeForm</hook>
 		<hook>displayAttributeGroupForm</hook>
+		<hook>displayAdminProductsExtra</hook>
     </hooks>
 	<confs>
         <conf>
