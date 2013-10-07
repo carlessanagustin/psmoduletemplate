@@ -97,7 +97,6 @@ class psModuleTemplate extends Module
 
         foreach ($this->xml->confs->conf as $conf){
             Configuration::updateValue((string)$conf->name, (string)$conf->value);
-			//print_r(' creating... '); print_r((string)$conf->name);
 		}
 
         return true;
@@ -143,7 +142,6 @@ class psModuleTemplate extends Module
 
         foreach ($this->xml->confs->conf as $conf){
             Configuration::deleteByName((string)$conf->name);
-			//print_r(' deleting... '); print_r((string)$conf->name);
 		}
         return true;
 
